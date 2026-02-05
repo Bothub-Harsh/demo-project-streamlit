@@ -88,5 +88,15 @@ else:
         st.session_state.user_id = None
         st.rerun()
 
+DB_FILE = "mental_health.db"   # use your exact db name
+
+with open(DB_FILE, "rb") as file:
+    st.download_button(
+        label="📥 Download Database",
+        data=file,
+        file_name=DB_FILE,
+        mime="application/octet-stream"
+    )
+
                
 
